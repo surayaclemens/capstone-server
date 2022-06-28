@@ -1,0 +1,15 @@
+[
+    {"ayajuthem" : "č̓ɛχʷ", "english" : "cook"},
+    {"ayajuthem" : "ʊxʷ", "english" : "it"},
+    {"ayajuthem" : "əs", "english" : "she"},
+    {"ayajuthem" : "č̓ɛχʷʊxʷəs", "english" : "she has cooked it"},
+
+    {"ayajuthem" : "č̓ɛga", "english" : "help"},
+    {"ayajuthem" : "θ", "english" : "me"},
+    {"ayajuthem" : "č̓ɛgaθəs", "english" : "she helped me"},
+
+    {"ayajuthem" : "θɛ", "english" : "you"},
+    {"ayajuthem" : "tᶿəm", "english" : "I will"},
+    {"ayajuthem" : "č̓ɛgaθɛtᶿəm", "english" : "I will help you"}
+
+]
