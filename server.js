@@ -1,20 +1,37 @@
 const express = require('express');
 const app = express();
-const fs = require('fs'); 
+// const fs = require('fs'); 
 const cors = require('cors'); 
+const PORT = process.env.PORT || 5050;
+require('dotenv').config();
+
+
 
 //Middleware
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+    // res.send('welcome to my api, it works!')
+    knex
+        .select("*")
+        .from("morphemes")
+        .then((data) => {
+            res.json(data);
+        })
+        .catch((err) => {
+            res.status(500).send("Error getting morpheme data");
+        })
+});
+
+
 //Routes
-const variable1 = require('./routes/variable1');
-app.use('/variable1', variable1);
-
-const variable2 = require('./routes/route2');
-app.use('/route2', variable2);
+const phrasesRoute = require('./routes/phrasesRoute');
+const { default: knex } = require('knex');
+app.use('/phrases', phrasesRoute);
 
 
-app.listen(8080, () => {
-    console.log('Server is listening on 8080');
+
+app.listen(PORT, () => {
+    console.log(`server running at http://localhost:${PORT}`);
 })

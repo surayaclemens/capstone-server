@@ -1,4 +1,4 @@
-const morphemesData = require("../data/data.json")
+const morphemesData = require("../seed_data/phrases")
 /**
  * @param { import("knex").Knex } knex
  * @returns { Promise<void> } 
