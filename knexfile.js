@@ -5,7 +5,7 @@
  */
 const connections = {
 
- 
+  development: {
     client: 'mysql',
     connection: {
       host: "127.0.0.1",
@@ -14,13 +14,11 @@ const connections = {
       database: "capstone",
       charset: "utf8"
     },
-
-    production: {
-      client: 'mysql',
-      connection: process.env.JAWSDB_URL,
-    },
-
-
+  },
+  production: {
+    client: 'mysql',
+    connection: process.env.JAWSDB_URL,
+  },
 };
 
 module.exports = 

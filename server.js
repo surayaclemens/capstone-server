@@ -5,12 +5,12 @@ const cors = require('cors');
 const PORT = process.env.PORT || 5050;
 require('dotenv').config();
 
-
-
 //Middleware
 app.use(express.json());
 app.use(cors());
 
+
+// Getting data from DB
 app.get('/', (req, res) => {
     // res.send('welcome to my api, it works!')
     knex
@@ -24,14 +24,13 @@ app.get('/', (req, res) => {
         })
 });
 
-
 //Routes
 const phrasesRoute = require('./routes/phrasesRoute');
-const { default: knex } = require('knex');
+const knex = require('knex')(require('./knexfile'));
 app.use('/phrases', phrasesRoute);
 
 
-
+//Get server to listen on port
 app.listen(PORT, () => {
     console.log(`server running at http://localhost:${PORT}`);
 })
