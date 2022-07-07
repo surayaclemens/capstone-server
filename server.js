@@ -1,6 +1,5 @@
 const express = require('express');
 const app = express();
-// const fs = require('fs'); 
 const cors = require('cors'); 
 const PORT = process.env.PORT || 5050;
 require('dotenv').config();
@@ -11,8 +10,7 @@ app.use(cors());
 
 
 // Getting data from DB
-app.get('/', (req, res) => {
-    // res.send('welcome to my api, it works!')
+app.get('/', (_req, res) => {
     knex
         .select("*")
         .from("morphemes")
